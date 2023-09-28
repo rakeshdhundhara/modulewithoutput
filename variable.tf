@@ -1,16 +1,14 @@
 variable "inst" {
   type = map(any)
 }
-# variable "tags" {
-#   type = map()
-# }
+
 variable "Availability" {
 
  type        = list(string)
 
  description = "Availability Zones"
 
-#  default     = ["ap-south-1a", "ap-south-1b"]
+
 }
 
 
