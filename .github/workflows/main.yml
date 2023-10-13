@@ -1,0 +1,30 @@
+name: Terraform Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set Up Terraform
+        uses: hashicorp/setup-terraform@v1
+          
+
+      - name: Initialize Terraform
+        run: terraform init
+
+      - name: Plan
+        run: terraform plan
+
+      - name: Apply
+        run: terraform apply -auto-approve
+
+      # Optionally, add more steps for validation, testing, or notifications.
+
